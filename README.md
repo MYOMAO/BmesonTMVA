@@ -6,6 +6,22 @@ Some rename of the codes may need to be done since some of the codes' names are 
 
 ## To START ##
 
+To get start, first clone the repository from github:
+
+git clone https://github.com/MYOMAO/BmesonTMVA.git
+
+Then go to the Bs folder by doing
+
+cd Bs
+
+Then do 
+
+ls
+
+You should see
 
 
+
+
+## TMVA Training ##
 
