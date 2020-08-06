@@ -1,21 +1,13 @@
-ptmin=3
-ptmax=7
+ptmin=10
+ptmax=15
 
-doMVA=0
-doMerge=0
 doReadxml=1
 
-mvatype="BDT"
+mvatype="CutsSA"
 
 InputB="/data/szhaozho/Bmeson2017pp/BsData.root"
-OutputB="/data/szhaozho/Bmeson2017pp/BDTOutput/Bs_Data_${mvatype}_pt_${ptmin}_${ptmax}.root"
 
 InputS="/data/szhaozho/Bmeson2017pp/BsMC.root"
-OutputS="/data/szhaozho/Bmeson2017pp/BDTOutput/Bs_MC_${mvatype}_pt_${ptmin}_${ptmax}.root"
-
-MergedB="/data/szhaozho/Bmeson2017pp/BDTOutput/Bs_Data_${mvatype}_Merged_pt_${ptmin}_${ptmax}.root"
-MergedS="/data/szhaozho/Bmeson2017pp/BDTOutput/Bs_MC_${mvatype}_Merged_pt_${ptmin}_${ptmax}.root"
-
 #MergedB="/data/szhaozho/Bmeson2017pp/BDTOutput/Backup/Bs_Data_${mvatype}_Merged_pt_${ptmin}_${ptmax}.root"
 #MergedS="/data/szhaozho/Bmeson2017pp/BDTOutput/Backup/Bs_MC_${mvatype}_Merged_pt_${ptmin}_${ptmax}.root"
 
@@ -26,7 +18,7 @@ collisionsyst="pp"
 lumi=303.25
 weightfunctiongen="1"
 weightfunctionreco="1"
-xmlfile="weights/TMVAClassification_BDT.weights.xml"
+xmlfile="weights/TMVAClassification_${mvatype}.weights.xml"
 
 RAA=1.0
 
@@ -44,35 +36,18 @@ MYCUTG=("(Gy>-2.40&&Gy<2.40)");
 
 
 
-if [ $doMVA -eq 1 ]; then   
-
-	g++ BDT.C $(root-config --cflags --libs) -g -o BDT.exe 
-	./BDT.exe "$InputS" "$OutputS"  $ptmin $ptmax
-	./BDT.exe "$InputB" "$OutputB"  $ptmin $ptmax
-	rm BDT.exe
-
-fi
-
-
-
-
-if [ $doMerge -eq 1 ]; then   
-
-	hadd $MergedS $InputS $OutputS
-	hadd $MergedB $InputB $OutputB
-
-fi
 
 
 if [ $doReadxml -eq 1 ]; then  
-	
 
-	cd readxml/
+
+	cd readxmlCut/
 	g++ readxml.cc $(root-config --cflags --libs) -l TMVA -l XMLIO -g -o readxml.exe
 	
-	./readxml.exe "$MergedS"  "$MergedB"  "$OUTPUTNAME"  "$xmlfile"  "$collisionsyst"  "$MYCUTS"  "$MYCUTB"  "$MYCUTG"  "$weightfunctiongen"  "$weightfunctionreco"  "$mvatype"  $ptmin  $ptmax  $lumi  $RAA
+	./readxml.exe "$InputS"  "$InputB"  "$OUTPUTNAME"  "$xmlfile"  "$collisionsyst"  "$MYCUTS"  "$MYCUTB"  "$MYCUTG"  "$weightfunctiongen"  "$weightfunctionreco"  "$mvatype"  $ptmin  $ptmax  $lumi  $RAA
 
 	rm readxml.exe
+
 
 fi
 
