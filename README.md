@@ -176,7 +176,7 @@ In the file, look for the signal efficiency =  0.37
 
 There are two options for optimization, the first one is the statistical significance (doNew = 0 in the codes readxml/readxml.cc). The second one is for the statistical significance with gamma quantile function (doNew = 1 in the codes readxml/readxml.cc). 
 
-"<Bin ibin="38" effS="3.7000000000000000e-01" effB="4.9443759024143219e-02">"
+Bin ibin="38" effS="3.7000000000000000e-01" effB="4.9443759024143219e-02"
 
 Then look at the corresponding cuts on the efficiency. Here we have:
 
