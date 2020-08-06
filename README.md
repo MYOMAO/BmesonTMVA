@@ -85,7 +85,9 @@ After running TMVA, it will take a long time for it to finish. Just get a coffee
 After TMVA finishes, you can find the training output weight files at:
 
 dataset/weights/rootfiles_TMVA_B_s_BDT_BDTG_5p0_10p0_0-1-2-3-4-5-6-7-8-9-10-11-12-13_root/TMVAClassification_BDT.class.C
+
 dataset/weights/rootfiles_TMVA_B_s_BDT_BDTG_5p0_10p0_0-1-2-3-4-5-6-7-8-9-10-11-12-13_root/TMVAClassification_BDTG.class.C  
+
 (The name inside weights depends on your set up, the default setup is BDT and BDTG training with pT 5 10 which gives us BDT_BDTG_5p0_10p0)
 
 We will use them in the next stage
@@ -108,13 +110,16 @@ cd Bs/GetWorkingPoint/
 Then do 
 
 mkdir -p readxmlCut/plots
+
 mkdir -p readxmlCut/weights
+
 mkdir -p readxmlCut/results
 
 
 Then transfer the .C and .xml file from the previous training to the weight folder:
 
 cp ../train/dataset/weights/rootfiles_TMVA_B_s_BDT_BDTG_5p0_10p0_0-1-2-3-4-5-6-7-8-9-10-11-12-13_root/TMVAClassification_CutsSA.class.C  readxmlCut/weights
+
 cp ../train/dataset/weights/rootfiles_TMVA_B_s_BDT_BDTG_5p0_10p0_0-1-2-3-4-5-6-7-8-9-10-11-12-13_root/TMVAClassification_CutsSA.weights.xml  readxmlCut/weights
 
 
