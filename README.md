@@ -187,21 +187,36 @@ For our training, we have already defined in the run.TMVAClassification.sh:
 
 
 varlist=(
+
     '#  0  :  ("Btrk1Pt"  , "Btrk1Pt"                                                                                        , "FMax")  #' 
-    '#  1  :  ("Btrk2Pt"  , "Btrk2Pt"                                                                                        , "FMin")  #' 
+
+	'#  1  :  ("Btrk2Pt"  , "Btrk2Pt"                                                                                        , "FMin")  #' 
+	
 	'#  2  :  ("Trk1DCAz" , "Trk1DCAz := abs(Btrk1Dz1/Btrk1DzError1)"                                                                                       , "FMin")  #' 
+	
 	'#  3  :  ("Trk2DCAz" , "Trk2DCAz := abs(Btrk2Dz1/Btrk2DzError1)"                                                                                       , "FMin")  #' 
+	
 	'#  4  :  ("Trk1DCAxy"  , "Trk1DCAxy := abs(Btrk1Dxy1/Btrk1DxyError1)"                                                                 , "FMin")  #' 
+	
 	'#  5  :  ("Trk2DCAxy"  , "Trk2DCAxy := abs(Btrk2Dxy1/Btrk2DxyError1)"                                                                 , "FMin")  #' 
-    '#  6  :  ("MassDis"  , "MassDis := abs(Btktkmass-1.019455)"                                                             , "FMax")  #' 
-    '#  7  :  ("dls"      , "dls := BsvpvDistance/BsvpvDisErr"                                                                 , "FMax")  #' 
-    '#  8  :  ("Balpha"   , "Balpha"                                                                                          , "FMax")  #' 
-    '#  9  :  ("dls2D"    , "dls2D := Bd0"                                                                             , "FMin")  #' 
-    '#  10 :  ("cos(Bdtheta)", "cos(Bdtheta)"                                                                                 , "FMax")  #' 
-    '#  11 :  ("Bchi2cl",    "Bchi2cl"                                                                                             , ""    )  #'
+    
+	'#  6  :  ("MassDis"  , "MassDis := abs(Btktkmass-1.019455)"                                                             , "FMax")  #' 
+    
+	'#  7  :  ("dls"      , "dls := BsvpvDistance/BsvpvDisErr"                                                                 , "FMax")  #' 
+    
+	'#  8  :  ("Balpha"   , "Balpha"                                                                                          , "FMax")  #' 
+    
+	'#  9  :  ("dls2D"    , "dls2D := Bd0"                                                                             , "FMin")  #' 
+    
+	'#  10 :  ("cos(Bdtheta)", "cos(Bdtheta)"                                                                                 , "FMax")  #' 
+    
+	'#  11 :  ("Bchi2cl",    "Bchi2cl"                                                                                             , ""    )  #'
+	
 	'#  12 :  ("Btrk1Eta", "Btrk1Eta"                                                                                 , "FMin")  #' 
+	
 	'#  13 :  ("Btrk2Eta", "Btrk2Eta"                                                                                 , "FMin")  #' 
-)
+
+`)
 
 
 So basically, we can apply the cut (min) as > and cut (max) < for the coresponding variable  in the dataset. 
