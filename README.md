@@ -4,6 +4,17 @@ This repository is made to run TMVA package to apply machine learning on our new
 
 Some rename of the codes may need to be done since some of the codes' names are a little weird. Nonetheless, for the moment, let's stick to the names now and see if we can get the fits on the B mesons done.  
 
+## Before you start, Check if you have CMSSW for TMVA##
+
+If you do not have CMSSW, use the following commands to build CMSSW:
+
+cmsrel CMSSW_9_4_10
+cd CMSSW_9_4_10/src
+cmsenv
+
+From now on, everything should be insider the folder CMSSW_9_4_10/src
+
+
 ## To START ##
 
 To get start, first clone the repository from github:
