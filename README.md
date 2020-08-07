@@ -79,7 +79,11 @@ Keep in mind that you can NEVER select Bmass, which is the variable we use to ex
 
 Now to run the TMVA on Bmesons, first copy the dataset name BsData.root and BsMC.root to a folder.
 
-You can get them from my submit-hi2.mit.edu folder
+You can get them from my EOS folder on lxplus:
+
+Data: /eos/cms/store/group/phys_heavyions/zshi/ppSkimmedData/BsData.root
+
+MC: /eos/cms/store/group/phys_heavyions/zshi/ppSkimmedData/BsMC.root
 
 Rename your input data path accordingly in 
 
