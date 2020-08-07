@@ -9,7 +9,9 @@ Some rename of the codes may need to be done since some of the codes' names are 
 If you do not have CMSSW, use the following commands to build CMSSW:
 
 cmsrel CMSSW_9_4_10
+
 cd CMSSW_9_4_10/src
+
 cmsenv
 
 From now on, everything should be insider the folder CMSSW_9_4_10/src
