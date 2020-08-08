@@ -3,9 +3,11 @@
 ptmin=$3; ptmax=$4 ;
 
 
-inputs="/export/d00/scratch/zzshi/CMSSW_7_5_8_patch3/Merge/ppDataSets/FirstSamples/WithoutBDT/BsMC.root"
-inputb="/export/d00/scratch/zzshi/CMSSW_7_5_8_patch3/Merge/ppDataSets/FirstSamples/WithoutBDT/BsData.root"
+#inputs="/export/d00/scratch/zzshi/CMSSW_7_5_8_patch3/Merge/ppDataSets/FirstSamples/WithoutBDT/BsMC.root"
+#inputb="/export/d00/scratch/zzshi/CMSSW_7_5_8_patch3/Merge/ppDataSets/FirstSamples/WithoutBDT/BsData.root"
 
+inputs="/data/szhaozho/Bmeson2017pp/BsMC.root"
+inputb="/data/szhaozho/Bmeson2017pp/BsData.root"
 
 output=rootfiles/TMVA_B_s ;
 
