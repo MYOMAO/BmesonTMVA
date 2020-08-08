@@ -26,7 +26,7 @@ collisionsyst="pp"
 lumi=303.25
 weightfunctiongen="1"
 weightfunctionreco="1"
-xmlfile="weights/TMVAClassification_BDT.weights.xml"
+xmlfile="weights/TMVAClassification_${mvatype}.weights.xml"
 
 RAA=1.0
 
@@ -46,10 +46,10 @@ MYCUTG=("(Gy>-2.40&&Gy<2.40)");
 
 if [ $doMVA -eq 1 ]; then   
 
-	g++ BDT.C $(root-config --cflags --libs) -g -o BDT.exe 
-	./BDT.exe "$InputS" "$OutputS"  $ptmin $ptmax
-	./BDT.exe "$InputB" "$OutputB"  $ptmin $ptmax
-	rm BDT.exe
+	g++ ${mvatype}.C $(root-config --cflags --libs) -g -o  ${mvatype}.exe 
+	./${mvatype}.exe "$InputS" "$OutputS"  $ptmin $ptmax
+	./${mvatype}.exe "$InputB" "$OutputB"  $ptmin $ptmax
+	rm ${mvatype}.exe
 
 fi
 

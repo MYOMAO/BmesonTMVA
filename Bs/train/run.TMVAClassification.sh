@@ -23,9 +23,9 @@ cut="Btrk1Pt > 0.2 && Btrk2Pt > 0.2 && Bchi2cl > 0.05 && BsvpvDistance/BsvpvDisE
 #algo="CutsGA,CutsSA"
 #algo="BDT,BDTG,CutsGA,CutsSA"
 
-#algo="BDT,BDTG,CutsGA,CutsSA"
+algo="BDT,BDTG,CutsGA,CutsSA"
 
-algo="BDT,BDTG"
+#algo="BDT,BDTG"
 
 
 #stages="0,1,2,3,4,5,6,7,8,9,10,11,12,13" # see definition below
