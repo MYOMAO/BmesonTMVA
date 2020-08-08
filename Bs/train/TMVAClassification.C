@@ -388,7 +388,7 @@ int TMVAClassification(std::string inputSname, std::string inputBname, std::stri
                          //// "H:!V:FitMethod=GA:CutRangeMin[0]=-10:CutRangeMax[0]=10:VarProp[1]=FMax:EffSel:Steps=30:Cycles=3:PopSize=400:SC_steps=10:SC_rate=5:SC_factor=0.95" );
                          CutsGAExp.Data());
 
-  TString CutsSAExp = "!H:!V:FitMethod=SA:EffSel:MaxCalls=600000:KernelTemp=IncAdaptive:InitialTemp=1e+6:MinTemp=1e-6:Eps=1e-10:UseDefaultScale";
+  TString CutsSAExp = "!H:!V:FitMethod=SA:EffSel:MaxCalls=600000:KernelTemp=IncAdaptive:InitialTemp=1e+6:MinTemp=1e-6:Eps=1e-10:UseDefaultScale:VarProp[0]=FMax:VarProp[1]=FMax:VarProp[2]=FMax:VarProp[3]=FMax:VarProp[4]=FMax:VarProp[5]=FMax:VarProp[6]=FMin:VarProp[7]=FMin:VarProp[8]=FMax:VarProp[9]=FMax:CutRangeMin[0]=0.2:CutRangeMax[0]=10.00:CutRangeMin[1]=0.2:CutRangeMax[1]=10,00:CutRangeMin[2]=0.0:CutRangeMax[2]=1:CutRangeMin[3]=0.0:CutRangeMax[3]=1:CutRangeMin[4]=0.0:CutRangeMax[4]=1:CutRangeMin[5]=0.0:CutRangeMax[5]=1:CutRangeMin[6]=0.0:CutRangeMax[6]=0.015:CutRangeMin[7]=2.0:CutRangeMax[7]=30.0:CutRangeMin[8]=0.0:CutRangeMax[8]=3.14:CutRangeMin[9]=0.05:CutRangeMax[9]=1.00";
   CutsSAExp+=VarSet;
   if (Use["CutsSA"])
     factory->BookMethod( dataloader, TMVA::Types::kCuts, "CutsSA",
