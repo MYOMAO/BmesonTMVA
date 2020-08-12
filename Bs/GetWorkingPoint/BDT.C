@@ -101,11 +101,11 @@ void BDT(TString infname, TString ofname, int ptmin, int ptmax)
 	theInputVars.push_back(a7);
 	theInputVars.push_back(a8);
 	theInputVars.push_back(a9);
-	theInputVars.push_back(a10);
-	theInputVars.push_back(a11);
+//	theInputVars.push_back(a10);
+//	theInputVars.push_back(a11);
 	theInputVars.push_back(a12);
-	theInputVars.push_back(a13);
-	theInputVars.push_back(a14);
+//	theInputVars.push_back(a13);
+//	theInputVars.push_back(a14);
 
 
 	std::vector<double> inputValues;
@@ -171,11 +171,11 @@ void BDT(TString infname, TString ofname, int ptmin, int ptmax)
 			inputValues.push_back(abs(Btktkmass[j]-1.019455));
 			inputValues.push_back(BsvpvDistance[j]/BsvpvDisErr[j]);
 			inputValues.push_back(Balpha[j]);
-			inputValues.push_back(Bd0[j]);
-			inputValues.push_back(cos(Bdtheta[j]));
+	//		inputValues.push_back(Bd0[j]);
+	//		inputValues.push_back(cos(Bdtheta[j]));
 			inputValues.push_back(Bchi2cl[j]);
-			inputValues.push_back(Btrk1Eta[j]);
-			inputValues.push_back(Btrk2Eta[j]);
+	//		inputValues.push_back(Btrk1Eta[j]);
+	//		inputValues.push_back(Btrk2Eta[j]);
 
 			BDT[j] = mva.GetMvaValue(inputValues);  
 

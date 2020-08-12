@@ -16,8 +16,9 @@ OUTPUTNAME="Bs_BDT_Training_${ptmin}_${ptmax}"
 collisionsyst="pp"
 
 lumi=303.25
-weightfunctiongen="1"
-weightfunctionreco="1"
+weightfunctiongen="pthat*weight"
+weightfunctionreco="pthat*weight"
+
 xmlfile="weights/TMVAClassification_${mvatype}.weights.xml"
 
 RAA=1.0

@@ -1,0 +1,25 @@
+
+
+####################################################################################################################################
+#                                                Variables [1;32m(To be used)[0m                                                            #
+####################################################################################################################################
+#                                                                                                                                  #
+[1;32m#  0  :  ("Btrk1Pt"  , "Btrk1Pt"                                                                                        , "FMax")  #[0m
+[1;32m#  1  :  ("Btrk2Pt"  , "Btrk2Pt"                                                                                        , "FMin")  #[0m
+[1;32m#  2  :  ("Trk1DCAz" , "Trk1DCAz := abs(Btrk1Dz1/Btrk1DzError1)"                                                                                       , "FMin")  #[0m
+[1;32m#  3  :  ("Trk2DCAz" , "Trk2DCAz := abs(Btrk2Dz1/Btrk2DzError1)"                                                                                       , "FMin")  #[0m
+[1;32m#  4  :  ("Trk1DCAxy"  , "Trk1DCAxy := abs(Btrk1Dxy1/Btrk1DxyError1)"                                                                 , "FMin")  #[0m
+[1;32m#  5  :  ("Trk2DCAxy"  , "Trk2DCAxy := abs(Btrk2Dxy1/Btrk2DxyError1)"                                                                 , "FMin")  #[0m
+[1;32m#  6  :  ("MassDis"  , "MassDis := abs(Btktkmass-1.019455)"                                                             , "FMax")  #[0m
+[1;32m#  7  :  ("dls"      , "dls := BsvpvDistance/BsvpvDisErr"                                                                 , "FMax")  #[0m
+[1;32m#  8  :  ("Balpha"   , "Balpha"                                                                                          , "FMax")  #[0m
+#  9  :  ("dls2D"    , "dls2D := Bd0"                                                                             , "FMin")  #[0m
+[1;32m#  10 :  ("cos(Bdtheta)", "cos(Bdtheta)"                                                                                 , "FMax")  #[0m
+[1;32m#  11 :  ("Bchi2cl",    "Bchi2cl"                                                                                             , ""    )  #[0m
+#  12 :  ("Btrk1Eta", "Btrk1Eta"                                                                                 , "FMin")  #[0m
+#  13 :  ("Btrk2Eta", "Btrk2Eta"                                                                                 , "FMin")  #[0m
+#                                                                                                                                  #
+####################################################################################################################################
+
+
+usage: ./run_TMVAClassification.sh [train] [draw curves] [create BDT tree]

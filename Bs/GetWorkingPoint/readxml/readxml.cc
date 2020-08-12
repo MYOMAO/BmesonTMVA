@@ -26,9 +26,9 @@ void readxml(TString inputSname, TString inputBname, TString outputname,
 	std::ofstream ofresult(Form("%s_%s.txt",outputresult.Data(),outputname.Data()),std::ofstream::out);
 	cfout cfresult(ofresult, std::cout);
 
-	TString cuts = isPbPb?Form("(%s)&&Bpt>%f&&Bpt<%f&&hiBin>=0&&hiBin<=200",mycuts.Data(),ptmin,ptmax):Form("(%s)&&Bpt>%f&&Bpt<%f",mycuts.Data(),ptmin,ptmax);
-	TString cutb = isPbPb?Form("(%s)&&Bpt>%f&&Bpt<%f&&hiBin>=0&&hiBin<=200",mycutb.Data(),ptmin,ptmax):Form("(%s)&&Bpt>%f&&Bpt<%f",mycutb.Data(),ptmin,ptmax);
-	TString cutg = isPbPb?Form("(%s)&&Gpt>%f&&Gpt<%f&&hiBin>=0&&hiBin<=200",mycutg.Data(),ptmin,ptmax):Form("(%s)&&Gpt>%f&&Gpt<%f",mycutg.Data(),ptmin,ptmax);
+	TString cuts = isPbPb?Form("(%s)&&Bpt>%f&&Bpt<%f",mycuts.Data(),ptmin,ptmax):Form("(%s)&&Bpt>%f&&Bpt<%f",mycuts.Data(),ptmin,ptmax);
+	TString cutb = isPbPb?Form("(%s)&&Bpt>%f&&Bpt<%f",mycutb.Data(),ptmin,ptmax):Form("(%s)&&Bpt>%f&&Bpt<%f",mycutb.Data(),ptmin,ptmax);
+	TString cutg = isPbPb?Form("(%s)&&Gpt>%f&&Gpt<%f",mycutg.Data(),ptmin,ptmax):Form("(%s)&&Gpt>%f&&Gpt<%f",mycutg.Data(),ptmin,ptmax);
 
 	// read weight file
 	const char* filename = weightfile;
@@ -115,10 +115,14 @@ void readxml(TString inputSname, TString inputBname, TString outputname,
 	generated->AddFriend("hiEvtAnalyzer/HiTree");
 
 //	TString BptWeight="0.474599*TMath::Exp(-0.001406*Bpt)+38.036016/(Bpt*Bpt+0.000330*0.000330)";
-	TString BptWeight="0.603534*TMath::Exp(-0.006505*Bpt)+13.177674/(Bpt*Bpt -4.418950 * Bpt + 0.009566*0.009566)";
+//	TString BptWeight="0.603534*TMath::Exp(-0.006505*Bpt)+13.177674/(Bpt*Bpt -4.418950 * Bpt + 0.009566*0.009566)";
+	TString BptWeight="1";
 
 //	TString	PVzWeight="(0.164847 * TMath::Exp(- 0.021378 * (PVz - 0.342927)*(PVz - 0.342927)))/(0.159507 * TMath::Exp(- 0.019986 * (PVz - 0.601387)*(PVz - 0.601387)))";
-	TString	PVzWeight="0.163562 * TMath::Exp(- 0.021039 * (PVz - 0.426587)*(PVz - 0.426587))/(0.159619 * TMath::Exp(- 0.020011 * (PVz - 0.587652)*(PVz - 0.587652)))";
+//	TString	PVzWeight="0.163562 * TMath::Exp(- 0.021039 * (PVz - 0.426587)*(PVz - 0.426587))/(0.159619 * TMath::Exp(- 0.020011 * (PVz - 0.587652)*(PVz - 0.587652)))";
+	TString	PVzWeight="1";
+
+//	TString pthatweight = "(pthat * weight)";
 
 	//generated->AddFriend("ntHlt");
 	//	generated->AddFriend("ntHi");
@@ -213,12 +217,17 @@ void readxml(TString inputSname, TString inputBname, TString outputname,
 	{
 		effS[i] = hcountEffS->Integral(i+1,nMVA)/hcountEffS->Integral();
 		effB[i] = hcountEffB->Integral(i+1,nMVA)/hcountEffB->Integral();
+
+		cout << "i = " << i << "     hcountEffS->Integral(i+1,nMVA) = " << hcountEffS->Integral(i+1,nMVA) << "     hcountEffS->Integral() = " << hcountEffS->Integral() << "   effS[i]  = " << effS[i]  << endl;
+
 	}
 
 	cout << "pass  3 "<< endl;
 
 	//TH2F* hemptyeff = new TH2F("hemptyeff",Form(";%s;Efficiency",mvatype.Data()),50,-1.2,1.2,10,0.,1.4);
-	TH2F* hemptyeff = new TH2F("hemptyeff",Form(";%s;Efficiency",mvatype.Data()),50,-0.85,1.05,10,0.,1.4);
+	//TH2F* hemptyeff = new TH2F("hemptyeff",Form(";%s;Efficiency",mvatype.Data()),50,-0.85,1.05,10,0.,1.4);
+	TH2F* hemptyeff = new TH2F("hemptyeff",Form(";%s;Efficiency",mvatype.Data()),50,0,1.05,10,0.,1.4);
+
 	sethempty(hemptyeff);
 	TGraph* geffS = new TGraph(nMVA+1,gmvaBins,effS);
 	geffS->SetMarkerSize(1.1);
