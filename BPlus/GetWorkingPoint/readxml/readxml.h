@@ -14,14 +14,15 @@ Float_t maxMVA = 1;
 Float_t widMVA = (maxMVA-minMVA)/nMVA;
 Float_t gmvaBins[nMVA+1];
 
-Double_t norm = 0.103; // FF of c->D0, i.e., D fraction
-Double_t BR = 3.1189e-5;
+Double_t norm = 0.401; // FF of c->D0, i.e., D fraction
+Double_t BR = 6.02061e-5;
 Double_t deltapt = 0.25;
 
-Float_t massD = 5.36682;
+Float_t massD = 5.27934;
 Float_t dmassDsignal = 0.08;
 Float_t dmassDsidbandL = 0.20;
-Float_t dmassDsidbandH = 0.30;
+Float_t dmassDsidbandH = 0.25;
+
 Float_t massDsignalL = massD - dmassDsignal;
 Float_t massDsignalH = massD + dmassDsignal;
 

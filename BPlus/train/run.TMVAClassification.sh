@@ -60,7 +60,9 @@ varlist=(
 
 
 cuts="${cut} && Bgen==23333"
-cutb="${cut} &&  (abs(Bmass - 5.36682 ) > 0.20 &&  abs(Bmass - 5.36682) < 0.30)" # Bmass_pdg=5.28GeV, sideband 0.2 ~ 0.3 for each side.
+#cutb="${cut} &&  (abs(Bmass - 5.36682 ) > 0.20 &&  abs(Bmass - 5.36682) < 0.30)" # Bmass_pdg=5.28GeV, sideband 0.2 ~ 0.3 for each side.
+
+cutb="${cut} &&  ((Bmass - 5.27929 ) > 0.25 &&  (Bmass - 5.27929) < 0.30)"
 #cutb="${cut} &&  (abs(Bmass - 5.36682 ) > 0.18 &&  abs(Bmass - 5.36682) < 0.36)" # Bmass_pdg=5.28GeV, sideband 0.2 ~ 0.3 for each side.
 #cutb="${cut} &&  (abs(Bmass - 5.36682 ) > 0.22 &&  abs(Bmass - 5.36682) < 0.28)"
 
